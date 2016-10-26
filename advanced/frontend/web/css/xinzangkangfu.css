@@ -1,0 +1,84 @@
+/*
+ Name:yangsen
+ Version:v1.0
+*/
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td{margin:0; padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset, img{border:0;}
+address, caption, cite, code, dfn, em, th, var{font-style:normal;font-weight:normal;}
+ol, ul{list-style:none;}
+caption, th{text-align:left;}
+h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal;}
+q:before, q:after{content:''}
+abbr, acronym,button{border:0;}
+body,button,input,select,textarea{font:1em/1.5 yahei,微软雅黑,arial,\5b8b\4f53;color: #333;}
+a{text-decoration: none;}
+
+/*定位*/
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.bc{margin-left:auto;margin-right:auto;}
+.fl{float:left;display:inline}
+.fr{float:right;display:inline}
+.cb{clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height: 0;font-size: 0;height: 0}
+.clearfix{zoom:1}
+.vm{vertical-align:middle}
+.pr{position:relative}
+.pa{position:absolute}
+.abs-right{position:absolute;right:0}
+.zoom{zoom:1}
+.hidden{visibility:hidden}
+.none{display:none}
+.block{display: block}
+.oh{overflow:hidden;height:0px;}
+html,body{}
+.mt10{margin-top:10px;}
+.mt1em{margin-top: 1em}
+.mb1em{margin-bottom: 1em}
+
+/*common*/
+.topbar{height: 86px;}
+.pagelogo{width: 327px;height: 48px;padding-top: 19px;padding-left: 90px;float: left;}
+.nav_list{float: right;margin-right:90px;width: 700px}
+.nav_list a{font-size: 16px;color: #898989;width: 110px;text-align: center;;height: 48px;line-height: 48px;margin-top: 19px;display: inline-block;}
+.nav_list a:hover{color: #000}
+.box_img{width:100%;}
+.title_box{padding-top:50px;font-size: 30px;color: #2c2c2c;text-align: center;}
+.title_line{height: 2px;background: #2cb5be;display:block;margin:5px auto 10px}
+.w1{width: 375px}
+.w2{width: 205px}
+.w3{width: 175px}
+
+.box_con{padding-top: 50px;width:100%;margin: 0 auto 50px}
+.video_box{width: 45%;height: auto;margin-left:2%;}
+.content_txt{width: 48%;line-height: 32px;font-size: 16px;margin-left: 50%;}
+.content_txt p{margin-bottom: 35px;}
+
+.cont_txt{width:770px;margin: 0 auto;font-size: 16px;}
+
+.icon_lsit{width:100%;margin: 0 auto 80px;text-align: center}
+.icon_box{width: 19%;display: inline-block;text-align: center;}
+.icon_box img{margin-bottom: 20px}
+
+.box_con2{width:100%;margin:30px auto;}
+.pages_img{min-width:40%;max-width: 426px;height: 324px;margin-left: 5%}
+.bg2{background: #eee;padding-bottom: 50px}
+
+.box_right2{margin-left:45px;}
+.list_table td{ text-align: center;line-height: 60px;font-size: 18px}
+.list_table td.icon_point{font-size: 80px;color: #2cb5be}
+
+.page_banner{position: relative;}
+.icon_play{position: absolute;z-index: 2;left: 50%;top:50%;margin-left: -88px;margin-top: -87px;cursor: pointer;}
+.icon_play img{display: block;}
+.icon_play:hover{opacity: .7}
+
+.content_box_title{position: absolute;z-index: 2;font-size: 30px;color: #fff;top:50px;width:100%;}
+.content_box_title .title_line{background: #feaf02}
+.content_box_btn{width: 280px;height: 80px;position: absolute;left: 50%;bottom:50px;margin-left: -140px;z-index: 2;background: url(../images/btn_bg.png);}
+

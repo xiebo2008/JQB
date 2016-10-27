@@ -22,7 +22,7 @@
                 <p>健亲宝&nbsp;&nbsp;&nbsp;&nbsp;云健康仪</p>
                 <h1>关注亲人健康</h1>
                 <div class="details-link" style="margin-top:40px;margin-left:52%;">
-                    <a href="/site/order" class="" target="_blank">申请试用</a>
+                    <a href="/site/order" class="" target="_blank">立即购买</a>
                 </div>
                 <div class="details-link" style="margin-top:15px;margin-left: 52%;">
                     <a href="/site/video" class="" target="_blank">视频欣赏</a>

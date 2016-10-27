@@ -40,7 +40,7 @@
     <section style="padding:0;">
         <div class="row">
             <div class="col-md-12 col-sm-12 text-left">
-                <h4>申请试用</h4>
+                <h4>申请购买</h4>
             </div>
         </div>
     </section>
@@ -61,9 +61,9 @@
                         <img src="/images/jqbyiqi_new.png" width="350px" style="border: 2px solid #e71b36">
                     </div>
                     <div class="col-md-6 col-sm-6">
-					     <B>经典尊享套餐</B>
-						  CFDA的认证，实时监控，精准测量
-                        <h4>市场建议零售价：¥9800</h4>
+					     <H3>经典尊享套餐</H3>
+						  <small>CFDA的认证，实时监控，精准测量</small><Br>
+                        <h4>全国统一价：<B><red>¥9800元</red></B></h4>
                        
                     </div>
                 </div>
@@ -204,9 +204,9 @@
         <input type="hidden"
                name="<?= \Yii::$app->request->csrfParam; ?>"
                value="<?= \Yii::$app->request->getCsrfToken();?>">
-        <input type="submit" value="确认并提交" class="querentijiao">
+        <input type="submit" value="确认并提交" class="querentijiao"> <!--<a href="javascript:submit_dingdan();" class="querentijiao">确认并提交</a>-->
     </form>
-    <!--<a href="javascript:submit_dingdan();" class="querentijiao">确认并提交</a>-->
+   
 </div>
 <div id="yuding_success" class="yuding_success" style="display:none; text-align: center">
     <!--<img src="/images/yudingsuccess.png" style="margin:5px auto">-->
@@ -314,4 +314,3 @@
     }*/
 
 </script>
-

@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6">
 					     <H3>经典尊享套餐</H3>
-						  <small>CFDA的认证，实时监控，精准测量</small><Br>
+						  <p>CFDA的认证，实时监控，精准测量</p>
                         <h4>全国统一价：<B><red>¥9800元</red></B></h4>
                        
                     </div>
@@ -283,6 +283,17 @@
         });*/
     }
     function submit_dingdan(){
+        alert("222222");
+        layer.closeAll();
+                layer.open({
+                    type: 1,
+                    title:'申请成功',
+                    closeBtn: 1,
+                    shadeClose: true,
+                    area: ['440px', '200px'],
+                    content:$("#yuding_success")
+                });
+        return;
         //$("#dingdan_form").submit();
         $.getJSON("index.php?r=site/submitorder",{
             "shouhuo_name":$("input[name='shouhuo_name']").val(),

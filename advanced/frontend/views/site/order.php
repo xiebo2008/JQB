@@ -283,7 +283,7 @@
         });*/
     }
     function submit_dingdan(){
-        alert("222222");
+        
         layer.closeAll();
                 layer.open({
                     type: 1,

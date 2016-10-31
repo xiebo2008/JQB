@@ -217,8 +217,7 @@ class SiteController extends Controller
      */
     public function actionSubmitorder(){
         $this->layout=false;
-        echo json_encode(array('status'=>200));
-       /* if(Yii::$app->request->isPost||Yii::$app->request->isAjax) {
+        if(Yii::$app->request->isPost||Yii::$app->request->isAjax) {
             $order = new Order();
             $order->shouhuo_name = Yii::$app->request->get("shouhuo_name");
             $order->shouhuo_phone = Yii::$app->request->get("shouhuo_phone");
@@ -238,7 +237,8 @@ class SiteController extends Controller
                 echo json_encode(array('status'=>500));
                 //return $this->render("order");
             }
-     /*   }else{
+        }
+        /*else{
             echo json_encode(array('status'=>500));
             //return $this->render("order");
         }

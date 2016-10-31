@@ -63,7 +63,7 @@
                     <div class="col-md-6 col-sm-6">
 					     <H3>经典尊享套餐</H3>
 						  <p>CFDA的认证，实时监控，精准测量</p>
-                        <h4>全国统一价：<B><red>¥9800元</red></B></h4>
+                        <h4>全国统一价：<B style="color:red">¥9800</B>元</h4>
                        
                     </div>
                 </div>
@@ -284,26 +284,19 @@
     }
     function submit_dingdan(){
         
-        layer.closeAll();
-                layer.open({
-                    type: 1,
-                    title:'申请成功',
-                    closeBtn: 1,
-                    shadeClose: true,
-                    area: ['440px', '200px'],
-                    content:$("#yuding_success")
-                });
-        return;
-        //$("#dingdan_form").submit();
-        $.getJSON("index.php?r=site/submitorder",{
+       
+       
+        $.getJSON("/site/submitorder",{
+            
             "shouhuo_name":$("input[name='shouhuo_name']").val(),
-            "shouhuo_phone":$("input[name='shouhuo_phone']").val(),
+             "shouhuo_phone":$("input[name='shouhuo_phone']").val(),
             "shouhuo_dizhi":$("input[name='shouhuo_dizhi']").val(),
             "shouhuo_menpai":$("input[name='shouhuo_menpai']").val(),
             "yuding_shuliang":$("input[name='yuding_shuliang']").val(),
             "yuding_shangpin":$("input[name='yuding_shangpin']").val(),
-            "zongjia": $("input[name='zongjia']").val(),
+            "zongjia": $("input[name='zongjia']").val() 
         },function(result){
+
             if(result.status==200){
                 layer.closeAll();
                 layer.open({

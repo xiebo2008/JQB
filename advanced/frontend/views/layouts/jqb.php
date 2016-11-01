@@ -17,6 +17,7 @@
     <title>武汉清易云康医疗设备有限公司</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/lanrenzhijia.css">
     <link rel="shortcut icon" href="#" />
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
@@ -104,6 +105,61 @@
         </div>
     </div>
 </nav>
+<!-- 右边漂浮窗代码 begin -->
+<div class="main-im">
+    <div id="open_im" class="open-im">&nbsp;</div>  
+    <div class="im_main" id="im_main">
+        <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2834306294&site=qq&menu=yes" target="_blank" class="im-qq qq-a" title="在线QQ客服">
+            <div class="qq-container"></div>
+            <div class="qq-hover-c"><img class="img-qq" src="http://demo.lanrenzhijia.com/2015/service0119/images/qq.png"></div>
+            <span> QQ在线咨询</span>
+        </a>
+        <div class="im-tel">
+            <div>客服咨询热线</div>
+            <div class="tel-num">4000-778-908</div>
+           <div ><a class="tel-num" href="http://www.wocaring.cn/site/feedback">留下宝贵意见</a></div>
+        </div>
+        <div class="im-footer" style="position:relative">
+            <div class="weixing-container">
+                <div class="weixing-show">
+                    <div class="weixing-txt">微信扫一扫<br>添加健亲宝</div>
+                    <img class="weixing-ma" src="/images/jqbdingyuehao.jpg">
+                    <div class="weixing-sanjiao"></div>
+                    <div class="weixing-sanjiao-big"></div>
+                </div>
+            </div>
+            <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function(){
+    $('#close_im').bind('click',function(){
+        $('#main-im').css("height","0");
+        $('#im_main').hide();
+        $('#open_im').show();
+    });
+    $('#open_im').bind('click',function(e){
+        $('#main-im').css("height","272");
+        $('#im_main').show();
+        $(this).hide();
+    });
+    $('.go-top').bind('click',function(){
+        $(window).scrollTop(0);
+    });
+    $(".weixing-container").bind('mouseenter',function(){
+        $('.weixing-show').show();
+    })
+    $(".weixing-container").bind('mouseleave',function(){        
+        $('.weixing-show').hide();
+    });
+});
+</script>
+<!-- 右边漂浮窗 代码部分 end-->
+
 <?=$content;?>
 <div class="container" id="footer">
     <section>

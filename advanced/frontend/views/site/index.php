@@ -31,7 +31,7 @@ $this->title = 'Home';
 			<img src="/images/njdt_0.jpg" alt="...">
 			<div class="carousel-caption">
 				<div class="details-link-buy">
-					<a href="/site/order" class="">申请试用</a>
+					<a href="/site/order" class="">立即购买</a>
 				</div>
 			</div>
 		</div>

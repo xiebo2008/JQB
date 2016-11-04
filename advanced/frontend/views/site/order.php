@@ -271,8 +271,8 @@
         $(".shouhuo_dizhi").html(shouhuo_dizhi+shouhuo_menpai);
         $("input[name='shouhuo_dizhi']").val(shouhuo_dizhi);
         $("input[name='shouhuo_menpai']").val(shouhuo_menpai);
-        submit_dingdan();
-        /*var dingdanqueren=$("#dingdanqueren");
+     //   submit_dingdan();
+       var dingdanqueren=$("#dingdanqueren");
         layer.open({
             type: 1,
             title:'订单确认',
@@ -280,7 +280,7 @@
             shadeClose: true,
             area: ['500px', '440px'],
             content:dingdanqueren
-        });*/
+        });
     }
     function submit_dingdan(){
         

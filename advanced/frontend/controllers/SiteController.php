@@ -219,23 +219,23 @@ class SiteController extends Controller
         $this->layout=false;
         if(Yii::$app->request->isPost||Yii::$app->request->isAjax) {
             $order = new Order();
-            $order->shouhuo_name = Yii::$app->request->get("shouhuo_name");
-            $order->shouhuo_phone = Yii::$app->request->get("shouhuo_phone");
-            $order->shouhuo_dizhi = Yii::$app->request->get("shouhuo_dizhi");
-            $order->shouhuo_menpai = Yii::$app->request->get("shouhuo_menpai", "");
-            $order->yuding_shangpin = Yii::$app->request->get("yuding_shangpin");
-            $order->yuding_shuliang = Yii::$app->request->get("yuding_shuliang");
-            $order->zongjia = floatval(Yii::$app->request->get("zongjia", 0));
+            $order->shouhuo_name = Yii::$app->request->post("shouhuo_name");
+            $order->shouhuo_phone = Yii::$app->request->post("shouhuo_phone");
+            $order->shouhuo_dizhi = Yii::$app->request->post("shouhuo_dizhi");
+            $order->shouhuo_menpai = Yii::$app->request->post("shouhuo_menpai", "");
+            $order->yuding_shangpin = Yii::$app->request->post("yuding_shangpin");
+            $order->yuding_shuliang = Yii::$app->request->post("yuding_shuliang");
+            $order->zongjia = floatval(Yii::$app->request->post("zongjia", 0));
             date_default_timezone_set("Asia/Chongqing");
             $order->yuding_time = time();
             $order->sendmail = 0;
             $order->status = 1;
             if ($order->save()) {
-                //return $this->render("pay", ['order' => $order]);
-                echo json_encode(array('status'=>200));
+                return $this->render("pay", ['order' => $order]);
+             //   echo json_encode(array('status'=>200));
             }else{
-                echo json_encode(array('status'=>500));
-                //return $this->render("order");
+               // echo json_encode(array('status'=>500));
+                return $this->render("order");
             }
         }
         /*else{

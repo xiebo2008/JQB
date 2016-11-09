@@ -216,8 +216,10 @@ class SiteController extends Controller
      * 提交订购
      */
     public function actionSubmitorder(){
-        $this->layout=false;
+
+     $this->layout="jqb";
         if(Yii::$app->request->isPost||Yii::$app->request->isAjax) {
+
             $order = new Order();
             $order->shouhuo_name = Yii::$app->request->post("shouhuo_name");
             $order->shouhuo_phone = Yii::$app->request->post("shouhuo_phone");
@@ -238,11 +240,11 @@ class SiteController extends Controller
                 return $this->render("order");
             }
         }
-        /*else{
+        else{
             echo json_encode(array('status'=>500));
-            //return $this->render("order");
+
         }
-        */
+         
     }
     public function actionSendmail(){
         date_default_timezone_set("Asia/Chongqing");

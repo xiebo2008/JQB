@@ -50,8 +50,8 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="order_step">
-                    <a href="" class="first_step"><span>1</span>填写申请信息</a>
-                    <a href="" class="second_step"><span>2</span>确认申请</a>
+                    <a href="" class="first_step"><span>1</span>填写购买信息</a>
+                    <a href="" class="second_step"><span>2</span>确认购买</a>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 text-left" style="padding-left:5%;">
@@ -270,8 +270,11 @@
         $("input[name='shouhuo_phone']").val(shouhuo_phone);
         $(".shouhuo_dizhi").html(shouhuo_dizhi+shouhuo_menpai);
         $("input[name='shouhuo_dizhi']").val(shouhuo_dizhi);
-        $("input[name='shouhuo_menpai']").val(shouhuo_menpai);
-     //   submit_dingdan();
+        $("input[name='shouhuo_menpai']").val(shouhuo_menpai);      
+
+        $("#dingdan_form").submit();
+    //    submit_dingdan();
+     /*
        var dingdanqueren=$("#dingdanqueren");
         layer.open({
             type: 1,
@@ -281,19 +284,24 @@
             area: ['500px', '440px'],
             content:dingdanqueren
         });
+*/
     }
     function submit_dingdan(){
-        
+        var shouhuo_dizhi=$("#province").val()+$("#city").val();
+        if($("#dist").val()){
+            shouhuo_dizhi=shouhuo_dizhi+$("#dist").val();
+        }
        
+    
        
         $.getJSON("/site/submitorder",{
             
-            "shouhuo_name":$("input[name='shouhuo_name']").val(),
-             "shouhuo_phone":$("input[name='shouhuo_phone']").val(),
-            "shouhuo_dizhi":$("input[name='shouhuo_dizhi']").val(),
-            "shouhuo_menpai":$("input[name='shouhuo_menpai']").val(),
-            "yuding_shuliang":$("input[name='yuding_shuliang']").val(),
-            "yuding_shangpin":$("input[name='yuding_shangpin']").val(),
+            "shouhuo_name":$("#shouhuo_name").val(),
+             "shouhuo_phone":$("#shouhuo_phone").val(),
+            "shouhuo_dizhi":shouhuo_dizhi,
+            "shouhuo_menpai": $("#shouhuo_menpai").val(),
+            "yuding_shuliang":$("#shuliang").val(),
+            "yuding_shangpin":"健亲宝云健康智能检测系统",
             "zongjia": $("input[name='zongjia']").val() 
         },function(result){
 

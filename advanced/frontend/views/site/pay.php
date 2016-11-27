@@ -97,6 +97,7 @@
                 <ul class="nav nav-tabs" style="margin-top: 20px">
                     <li role="presentation" class="active"><a href="#wechat" data-toggle="tab">微信支付</a></li>
                     <li role="presentation"><a href="#alipay" data-toggle="tab">支付宝</a></li>
+                     <li role="presentation"><a href="#bankpay" data-toggle="tab">银行汇款</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="wechat">
@@ -131,6 +132,27 @@
                             健亲宝云健康智能检测系统标准版&WIDtotal_fee=<?=$order->zongjia.'.00'?>&WIDbody=健亲宝云健康智能检测系统标准版">
 
                                 </iframe>
+                            </div>
+                            <input type="hidden" id="out_trade_no_1" value="">
+                        </div>
+                    </div>
+                     <div class="tab-pane fade" id="bankpay">
+                        <div class="row" style="margin-top: 20px;">
+                       
+                            <div class="col-md-4 text-left" style="margin-left: 200px">
+                        公司名称：武汉清易云康医疗设备有限公司 <br>
+                        开户银行：建行武汉光谷支行<br>
+                        银行帐号：42001110208053013306<br>
+                        汇款时请确认银行账号正确无误，汇款前后请联系客服核对汇款信息。<br>
+                        客服QQ:2834306294  &nbsp;&nbsp;客服电话4000-778-908<br>
+                                <p style="text-align: center;width: 100%;float: right;padding-top:20px">
+                                    您需支付&nbsp;
+                                    <lable id="pay_fee"><?=$order->zongjia?></lable>&nbsp;元
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-left">
+                                
+
                             </div>
                             <input type="hidden" id="out_trade_no_1" value="">
                         </div>

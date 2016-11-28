@@ -5,6 +5,7 @@ use common\models\Feedback;
 use common\models\Healtharticle;
 use common\models\News;
 use common\models\Order;
+use common\models\Coupon;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\data\Pagination;
@@ -211,6 +212,20 @@ class SiteController extends Controller
     }
     public function actionPay(){
         return $this->render("pay");
+    }
+
+    /*
+      获取优惠码的信息
+    */
+    public function actionYhm(){
+        $yhm = Yii::$app->request->get("code");
+        $coup = Coupon::find()
+       ->where(['coupon'=>$yhm ,
+               'status'=> Coupon::STATUS_ACTIVE]   )
+       ->one(); 
+
+        echo json_encode(array('youhui'=>$coup->subtract));
+      // return $this->render("order");
     }
     /*
      * 提交订购

@@ -133,8 +133,17 @@
                             <label class="col-md-2 control-label" for="universities_city">具体街道</label>
                             <div class="col-md-10">
                                 <input type="text" id="shouhuo_menpai" placeholder="街道/门牌号" class="name_phone" maxlength="30">
-                            </div>
+                            </div>                            
                             <div class="col-md-offset-2 col-md-10"><div class="help-block"></div></div>
+                            <div class="col-md-offset-2 col-md-10"></div>
+                        </div>
+                         <div class="form-group field-universities_city required">
+                            <label class="col-md-2 control-label" for="universities_city">优惠码（8位字符）</label>
+                            <div class="col-md-10">
+                                <input type="text" id="youhuima" placeholder="优惠码（8位字符）" class="name_phone" maxlength="8" onchange="check_YHM()">
+                                <input type="hidden" id="youhui" value="0">
+                            </div>                            
+                            <div class="col-md-offset-2 col-md-10"><div class="help-block" id="youhuima_message"></div></div>
                             <div class="col-md-offset-2 col-md-10"></div>
                         </div>
                         <script>
@@ -176,10 +185,11 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="xiaoji">9800</span><input type="hidden" id="xiaoji" value="9800">
+                                    <span class="xiaoji">9800</span>
                                 </td>
                             </tr>
                         </table>
+
                         <div class="zongjia">
                             <p>商品总额：<span class="zongjia_text">￥9800 元</span><a href="javascript:tijiaodingdan();">提交订单</a></p>
                         </div>
@@ -213,10 +223,41 @@
     <p style="margin-top:20px;margin-bottom: 20px;font-size: 16px;color:#e71b36;">申请成功!<br>请保持电话畅通，工作人员将在24小时内联系您!</p>
 </div>
 <script>
+function check_YHM(){
+  
+     var youhuima=$("#youhuima").val();
+     if(youhuima.length==0) 
+     {
+         $("#youhuima_message").html("");
+         $("#youhui").val(0);
+         count_zongjia();
+     }
+     if (youhuima.length==8){
+     
+        $.getJSON("/site/yhm",{ "code":youhuima },function(result){
+                 $youhui  = result.youhui;
+                 $("#youhuima_message").html("<red>优惠码抵现"+$youhui+"元</red>");
+                 $("#youhui").val($youhui);
+                count_zongjia();
+            }
+        )
+         
+
+     }
+     else
+     {
+          $("#youhuima_message").html("无效优惠码");
+          $("#youhui").val(0);
+          count_zongjia();
+     }
+     
+   
+}
+
     function count_zongjia(){
-        var zongjia=$("#shuliang").val()*9800;
-        $("#xiaoji").val(zongjia);
-        $(".xiaoji").html(zongjia);
+        var youhui= $("#youhui").val();
+        var zongjia=$("#shuliang").val()*9800 - youhui ;       
+        $(".xiaoji").html($("#shuliang").val()*9800);
         $(".zongjia_text").html('￥ '+zongjia+' 元');
         $("input[name='zongjia']").val(zongjia);
     }
@@ -272,9 +313,9 @@
         $("input[name='shouhuo_dizhi']").val(shouhuo_dizhi);
         $("input[name='shouhuo_menpai']").val(shouhuo_menpai);      
 
-        $("#dingdan_form").submit();
+     //   $("#dingdan_form").submit();
     //    submit_dingdan();
-     /*
+     
        var dingdanqueren=$("#dingdanqueren");
         layer.open({
             type: 1,
@@ -284,7 +325,7 @@
             area: ['500px', '440px'],
             content:dingdanqueren
         });
-*/
+ 
     }
     function submit_dingdan(){
         var shouhuo_dizhi=$("#province").val()+$("#city").val();

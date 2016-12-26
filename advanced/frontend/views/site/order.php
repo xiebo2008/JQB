@@ -190,8 +190,12 @@
                             </tr>
                         </table>
 
-                        <div class="zongjia">
-                            <p>商品总额：<span class="zongjia_text">￥9800 元</span><a href="javascript:tijiaodingdan();">提交订单</a></p>
+                        <div class="zongjia"> 
+						<p>商品总额(含运费)：<span class="zongjia2_text">￥0 元</span></p>
+						<p>商品优惠：<span class="youhui_text">￥0 元</span></p>
+                         <p>在线支付金额：<span class="zongjia_text">￥9800 元</span></p>
+							<p><a href="javascript:tijiaodingdan();">提交订单</a></p>
+							
                         </div>
                     </div>
                 </div>
@@ -229,6 +233,8 @@ function check_YHM(){
      if(youhuima.length==0) 
      {
          $("#youhuima_message").html("");
+		  $(".youhui_text").html("￥0 元");
+		 
          $("#youhui").val(0);
          count_zongjia();
      }
@@ -237,6 +243,7 @@ function check_YHM(){
         $.getJSON("/site/yhm",{ "code":youhuima },function(result){
                  $youhui  = result.youhui;
                  $("#youhuima_message").html("<red>优惠码抵现"+$youhui+"元</red>");
+				  $(".youhui_text").html("￥"+$youhui+" 元");
                  $("#youhui").val($youhui);
                 count_zongjia();
             }
@@ -258,6 +265,7 @@ function check_YHM(){
         var youhui= $("#youhui").val();
         var zongjia=$("#shuliang").val()*9800 - youhui ;       
         $(".xiaoji").html($("#shuliang").val()*9800);
+		$(".zongjia2_text").html('￥ '+$("#shuliang").val()*9800+' 元');
         $(".zongjia_text").html('￥ '+zongjia+' 元');
         $("input[name='zongjia']").val(zongjia);
     }

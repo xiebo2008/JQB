@@ -69,7 +69,7 @@
                 <table style="margin-top:20px">
                     <tr>
                         <th style="border-left:none;width:300px">商品名称</th>
-                        <th>单价（元）</th>
+                      
                         <th>数量</th>
                         <th>小计（元）</th>
                     </tr>
@@ -77,9 +77,7 @@
                         <td>
                             <img src="/images/jqbyiqi_new.png" width="90px" style="margin-right:10px"><span>&nbsp;健亲宝云健康智能检测系统</span>
                         </td>
-                        <td>
-                            9800
-                        </td>
+                       
                         <td>
                             <div class="input-group" style="width:167px;margin:0 auto;">
                                 <span><?=$order->yuding_shuliang?></span>

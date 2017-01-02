@@ -140,7 +140,7 @@
                          <div class="form-group field-universities_city required">
                             <label class="col-md-2 control-label" for="universities_city">优惠码（8位字符）</label>
                             <div class="col-md-10">
-                                <input type="text" id="youhuima" placeholder="优惠码（8位字符）" class="name_phone" maxlength="8" onchange="check_YHM()">
+                                <input type="text" id="youhuima" placeholder="优惠码（8位字符）" class="name_phone" maxlength="8" oninput="check_YHM()">
                                 <input type="hidden" id="youhui" value="0">
                             </div>                            
                             <div class="col-md-offset-2 col-md-10"><div class="help-block" id="youhuima_message"></div></div>
@@ -237,6 +237,7 @@ function check_YHM(){
 		 
          $("#youhui").val(0);
          count_zongjia();
+		 return;
      }
      if (youhuima.length==8){
      
@@ -254,6 +255,8 @@ function check_YHM(){
      else
      {
           $("#youhuima_message").html("无效优惠码");
+		   $(".youhui_text").html("￥0 元");
+		 
           $("#youhui").val(0);
           count_zongjia();
      }

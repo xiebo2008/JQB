@@ -110,7 +110,7 @@
     <div id="open_im" class="open-im">&nbsp;</div>  
     <div class="im_main" id="im_main">
         <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2834306294&site=qq&menu=yes" target="_blank" class="im-qq qq-a" title="在线QQ客服">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2580369804&site=qq&menu=yes" target="_blank" class="im-qq qq-a" title="在线QQ客服">
             <div class="qq-container"></div>
             <div class="qq-hover-c"><img class="img-qq" src="http://demo.lanrenzhijia.com/2015/service0119/images/qq.png"></div>
             <span> QQ在线咨询</span>
